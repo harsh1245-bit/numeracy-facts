@@ -15,7 +15,7 @@ export default function Game() {
   const [started, setStarted] = useState(false);
   const [items, setItems] = useState(null);
   const [questions, setQuestions] = useState(null);
-
+  //const suffList = ['%','Billion gallons','Fahrenheit','GW.h','Gigawatt-hours','MW','Megawatt-hours','Million units','Terawatt-hours','billion tons','cm','cycles','degree celcius','degree celsius','degree fahrenheit','females','houses','inches','kilo metres','km square','metres','micrograms per cubic metre','million litres','million terajoules','mm','people','thousand tons','tons','years']
   useEffect(() => {
     const fetchQuestion= async ()=>{
       const {data, error} = await supabase
@@ -29,6 +29,14 @@ export default function Game() {
       
       if(data){
         const x =data;
+        /*const quesArray = [];
+        const  num = Math.floor(Math.random()*suffList.length);
+        const reqTag = suffList[num];
+        for(let i=0; i<x.length; i++){
+          if(x[i].suffix===reqTag){
+            quesArray.push(x[i]);
+          }
+        }*/
         setQuestions(x);
         //console.log(data);
       }}

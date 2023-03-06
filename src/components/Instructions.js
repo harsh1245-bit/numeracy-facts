@@ -43,7 +43,7 @@ export default function Instructions(props) {
           <div>
             Have feedback? Please report it on{" "}
             <a
-              href="https://github.com/tom-james-watson/wikitrivia/issues/"
+              href="https://github.com/harsh1245-bit/numeracy-facts/issues/"
               target="_blank"
               rel="noopener noreferrer"
             >
