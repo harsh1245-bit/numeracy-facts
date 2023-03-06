@@ -12,14 +12,8 @@ export default function Instructions(props) {
   return (
     <div className={styles.instructions}>
       <div className={styles.wrapper}>
-        <h2>Answer the numeric facts.</h2>
-        <h4>
-            <ul style={{color:"white", textAlign:"left"}}>
-                <li>You have got three lives.</li>
-                <li>If your answer will be close, you'll get one point.</li>
-                <li>If your answer will not be close, you'll lose one life.</li>
-            </ul>
-        </h4>
+        <h2>Place the cards on the numberline in the correct order.</h2>
+        
         {highscore !== 0 && (
           <div className={styles.highscoreWrapper}>
             <Score score={highscore} title="Best streak" />
