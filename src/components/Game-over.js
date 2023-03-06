@@ -1,4 +1,4 @@
-﻿import React, { useState, useCallback } from "react";
+import React, { useState, useCallback } from "react";
 import { animated, useSpring } from "react-spring";
 import styles from "../styles/game-over.module.scss";
 import Button from "./Button";
