@@ -2,7 +2,7 @@ import React from "react";
 import classNames from "classnames";
 import { useSpring, animated } from "react-spring";
 import { Draggable } from "react-beautiful-dnd";
-import { createWikimediaImage } from "../lib/image";
+//import { createWikimediaImage } from "../lib/image";
 import styles from "../styles/item-card.module.scss";
 
 const datePropIdMap = {
