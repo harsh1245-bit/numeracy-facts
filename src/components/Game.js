@@ -19,7 +19,7 @@ export default function Game() {
   useEffect(() => {
     const fetchQuestion= async ()=>{
       const {data, error} = await supabase
-      .from('new_que')
+      .from('ourWorld')
       .select()
   
       if(error){

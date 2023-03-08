@@ -2,7 +2,7 @@ import React from "react";
 import classNames from "classnames";
 import { useSpring, animated } from "react-spring";
 import { Draggable } from "react-beautiful-dnd";
-//import { createWikimediaImage } from "../lib/image";
+import { createWikimediaImage } from "../lib/image";
 import styles from "../styles/item-card.module.scss";
 
 const datePropIdMap = {
@@ -79,9 +79,13 @@ export default function ItemCard(props) {
               }}
             >
               <div className={styles.top}>
-                <div className={styles.label}>{item.question}</div>
+                <div className={styles.label}>{item.question} of {item.country}</div>
                 <div className={styles.description}>{type}</div>
               </div>
+              <div
+                className={styles.image}
+                
+              ><img src={`https://flagcdn.com/w320/${item.code}.png`} alt="..." /></div>
               
               <animated.div
                 className={classNames(styles.bottom, {
