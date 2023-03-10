@@ -20,7 +20,7 @@ export default function Game() {
     const fetchQuestion= async ()=>{
       const {data, error} = await supabase
       .from('ourWorld')
-      .select()
+      .select().range(12000,17000);
   
       if(error){
           console.log("error")
