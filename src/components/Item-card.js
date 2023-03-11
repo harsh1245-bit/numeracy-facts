@@ -111,13 +111,13 @@ export default function ItemCard(props) {
                 ),
               }}
             >
-              <div style = {{textAlign:'left'}}>
+              
               <span className={styles.label}>{item.question} of {item.country}</span>
               <span className={styles.date}>
                 {datePropIdMap[item.created_at]}: {item.answer} {item.suffix}
               </span>
               <span className={styles.description}>{item.year}.</span>
-              </div>
+              
               <a
                 href={item.url}
                 className={styles.wikipedia}
