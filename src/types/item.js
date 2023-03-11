@@ -6,6 +6,7 @@ export const Item ={
     question: null,
     
     code:null,
+    url: null,
     answer: null,
   }
   
@@ -19,6 +20,7 @@ export const Item ={
     country: null,
     question: null,
     code:null,
+    url: null,
     
     answer: null,
   };

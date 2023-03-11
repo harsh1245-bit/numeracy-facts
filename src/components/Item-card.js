@@ -116,6 +116,17 @@ export default function ItemCard(props) {
                 {datePropIdMap[item.created_at]}: {item.answer}
               </span>
               <span className={styles.description}>{item.suffix}.</span>
+              <a
+                href={item.url}
+                className={styles.wikipedia}
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={(e) => {
+                  e.stopPropagation();
+                }}
+              >
+                Article
+              </a>
               
             </animated.div>
           </div>
