@@ -81,6 +81,7 @@ export default function ItemCard(props) {
               <div className={styles.top}>
                 <div className={styles.label}>{item.question} of {item.country}</div>
                 <div className={styles.description}>{type}</div>
+                <div className={styles.description}>{item.year}</div>
               </div>
               <div
                 className={styles.image}
