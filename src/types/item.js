@@ -4,7 +4,7 @@ export const Item ={
     id: null,
     country:null,
     question: null,
-    
+    year: null,
     code:null,
     url: null,
     answer: null,
@@ -21,6 +21,6 @@ export const Item ={
     question: null,
     code:null,
     url: null,
-    
+    year: null,
     answer: null,
   };
