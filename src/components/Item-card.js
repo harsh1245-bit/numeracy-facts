@@ -97,10 +97,8 @@ export default function ItemCard(props) {
               >
                 <span>
                   {"played" in item
-                    ? item.answer < -10000
-                      ? item.answer.toLocaleString()
-                      : item.answer.toString()
-                    : datePropIdMap[item.created_at]}
+                    ? item.answer
+                    : item.suffix}
                 </span>
               </animated.div>
             </animated.div>
@@ -116,7 +114,7 @@ export default function ItemCard(props) {
               
               <span className={styles.label}>{item.question} of {item.country}</span>
               <span className={styles.date}>
-                {datePropIdMap[item.created_at]}: {item.answer} {item.suffix}
+                {datePropIdMap[item.created_at]}: {item.answer} {type}
               </span>
               <span className={styles.description}>{item.year}.</span>
               
