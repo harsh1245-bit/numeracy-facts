@@ -59,8 +59,8 @@ export default function DropDown(props) {
             <Dropdown.Toggle id="dropdown-autoclose-outside" className="mt-2" style={{backgroundColor:"#006699"}}>
             Countries
             </Dropdown.Toggle>
-            <Dropdown.Menu >
-              {countryList.map((country,index) => (<Dropdown.Item as="button" className = {styles.items} >
+            <Dropdown.Menu variant="dark" style={{overflowY:'scroll', maxHeight:"200px"}}>
+              {countryList.map((country,index) => (<Dropdown.Item as="li" className = {styles.items} variant="dark">
                 <input
                     type="checkbox"
                     id={`custom-checkbox-${index}`}
@@ -70,7 +70,7 @@ export default function DropDown(props) {
                     checked={checkedState[index]}
                     onChange={() => handleOnChange(index)}
                   />
-                  <label htmlFor={`custom-checkbox-${index}`}>{country}</label></Dropdown.Item>))}
+                  <label htmlFor={`custom-checkbox-${index}`}>  {country}</label></Dropdown.Item>))}
               
             </Dropdown.Menu>
           </Dropdown>
