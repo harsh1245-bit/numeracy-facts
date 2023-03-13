@@ -56,11 +56,11 @@ export default function DropDown(props) {
     <div>
         
           <Dropdown className={styles.dropDown} autoClose="outside">
-            <Dropdown.Toggle id="dropdown-autoclose-outside" className="mt-2">
+            <Dropdown.Toggle id="dropdown-autoclose-outside" className="mt-2" style={{backgroundColor:"#006699"}}>
             Countries
             </Dropdown.Toggle>
             <Dropdown.Menu >
-              {countryList.map((country,index) => (<Dropdown.Item as="button" className = {styles.items}>
+              {countryList.map((country,index) => (<Dropdown.Item as="button" className = {styles.items} >
                 <input
                     type="checkbox"
                     id={`custom-checkbox-${index}`}
