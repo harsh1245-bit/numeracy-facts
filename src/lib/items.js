@@ -22,11 +22,23 @@ export function getRandomItem(deck, played) {
 }*/
 
 export function checkCorrect(played, item, index) {
+  
   const sorted = [...played, item].sort((a, b) => a.answer - b.answer);
+  console.log("sorted", sorted);
   const correctIndex = sorted.findIndex((i) => {
     return i.id === item.id;
   });
-
+  console.log(index,correctIndex);
+  if(index===correctIndex){
+    return{ correct: true, delta:0};
+  }
+  console.log("played",played);
+  if(correctIndex!==0){
+    if(item.answer===played[index].answer){
+      return{ correct: true, delta:0};
+    }
+  }
+  console.log("core",played[correctIndex-1]);
   if (index !== correctIndex) {
     return { correct: false, delta: correctIndex - index };
   }
