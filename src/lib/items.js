@@ -43,6 +43,9 @@ export function checkCorrect(played, item, index) {
   }*/
   //console.log("core",played[correctIndex-1]);
   if (index !== correctIndex) {
+    if(played[index].answer===item.answer){
+      return { correct: true, delta: 0 };
+    }
     return { correct: false, delta: correctIndex - index };
   }
 
