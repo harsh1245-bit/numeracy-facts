@@ -11,10 +11,14 @@ export function getRandomItem(deck, played) {
   
 
   if (candidates.length > 0) {
-    return candidates[Math.floor(Math.random() * candidates.length)];
+    const quest = candidates[Math.floor(Math.random() * candidates.length)] 
+    
+    return quest;
   }
-  
-  return deck[Math.floor(Math.random() * deck.length)];
+  const quest = deck[Math.floor(Math.random() * deck.length)];
+
+  //updateQuestion("harsh");
+  return quest;
 }
 
 /*function tooClose(item, played) {
@@ -42,10 +46,8 @@ export function checkCorrect(played, item, index) {
     }
   }*/
   //console.log("core",played[correctIndex-1]);
-  if (index !== correctIndex) {
-    if(played[index].answer===item.answer){
-      return { correct: true, delta: 0 };
-    }
+  if (index!==sorted.length-1 && index !== correctIndex) {
+    
     return { correct: false, delta: correctIndex - index };
   }
 

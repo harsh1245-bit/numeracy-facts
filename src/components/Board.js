@@ -2,7 +2,7 @@ import React, { useState, useMemo, useLayoutEffect } from "react";
 import { DragDropContext} from "react-beautiful-dnd";
 import useAutoMoveSensor from "../lib/useAutoMoveSensor";
 //import { GameState } from "../types/game";
-import { checkCorrect, getRandomItem, preloadImage } from "../lib/items";
+import { checkCorrect, preloadImage, getRandomItem } from "../lib/items";
 import NextItemList from "./next-item-list";
 import PlayedItemList from "./played-item-list";
 import styles from "../styles/board.module.scss";
@@ -10,7 +10,7 @@ import Hearts from "./Hearts";
 import GameOver from "./Game-over";
 
 export default function Board(props) {
-  const { highscore, resetGame, state, setState, updateHighscore } = props;
+  const { highscore, resetGame, state, setState, updateHighscore} = props;
 
   const [isDragging, setIsDragging] = useState(false);
   
@@ -18,7 +18,7 @@ export default function Board(props) {
     setIsDragging(true);
     navigator.vibrate(20);
   }
-
+  
   async function onDragEnd(result) {
     setIsDragging(false);
 
