@@ -15,7 +15,7 @@ export default function Game() {
   const [loaded, setLoaded] = useState(false);
   const [started, setStarted] = useState(false);
   const [items, setItems] = useState(null);
-  const [count,setCount] = useState(1);
+  
   const [questions, setQuestions] = useState(null);
   const [countries, setCountries] = useState(new Set(['United States', 'China', 'United Kingdom', 'Germany', 'Canada', 'India', 'Japan', 'France', 'Russia', 'Italy', 'Switzerland', 'Spain', 'Sweden', 'Netherlands', 'Israel', 'United Arab Emirates', 'Saudi Arabia', 'Belgium', 'Thailand', 'Pakistan', 'Iran', 'Portugal', 'South Korea']));
   //const suffList = ['%','Billion gallons','Fahrenheit','GW.h','Gigawatt-hours','MW','Megawatt-hours','Million units','Terawatt-hours','billion tons','cm','cycles','degree celcius','degree celsius','degree fahrenheit','females','houses','inches','kilo metres','km square','metres','micrograms per cubic metre','million litres','million terajoules','mm','people','thousand tons','tons','years']
@@ -80,7 +80,7 @@ export default function Game() {
    createStateAsync();
   
     
-    setCount(0);
+    
     // eslint-disable-next-line
   }, [questions]);
   const startGame = ()=>{

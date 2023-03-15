@@ -1,6 +1,6 @@
 //import { GameState } from "../types/game";
 //import { Item } from "../types/item";
-import React, { useState, useEffect, useCallback } from "react";
+
 import { preloadImage,getRandomItem } from "./items";
 
 export default async function createState(deck) {
