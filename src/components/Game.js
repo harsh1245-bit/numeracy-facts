@@ -82,15 +82,28 @@ export default function Game() {
   }, [questions]);
   const startGame = ()=>{
     const arr = []
+    let x = 0;
     const countryArr = Array.from(countries);
     for(let i=0; i<countryArr.length; i++){
       const countr = countryArr[i];
       for(let j=0; j<questions.length; j++){
         if(questions[j].country===countr){
           arr.push(questions[j]);
+          //console.log(arr[x]);
+          if(arr[x].answer>9999 && arr[x].answer<999999){
+            arr[x].answer = (arr[x].answer/1000).toFixed(1);
+            //console.log(arr[x].answer);
+            arr[x].answer = arr[x].answer*1000;
+          }
+          else if(arr[x].answer>999999 && arr[x].answer<999999999){
+            arr[x].answer = (arr[x].answer/1000000).toFixed(1);
+            arr[x].answer = arr[x].answer*1000000;
+          }
+          x=x+1;
         }
       }
       setQuestions(arr);
+      console.log(questions);
     }
     setStarted(true);
   }
@@ -105,11 +118,11 @@ export default function Game() {
     resetGameAsync();
     // eslint-disable-next-line
   }, [questions]);
-
+  
   const [highscore, setHighscore] = useState(
     Number(localStorage.getItem("highscore") ?? "0")
   );
-  
+
   const updateCountries = useCallback((countrySet)=>{
     setCountries(countrySet);
     console.log(countries)
@@ -140,6 +153,7 @@ export default function Game() {
       setState={setState}
       resetGame={resetGame}
       updateHighscore={updateHighscore}
+      
     />
   );
 }

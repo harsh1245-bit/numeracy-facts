@@ -2,15 +2,18 @@
 import { createWikimediaImage } from "./image";
 
 export function getRandomItem(deck, played) {
+  
   //const periods = [[-100000, 1000],[1000, 1800],[1800, 2020], ];
   //const [fromanswer, toanswer] =periods[Math.floor(Math.random() * periods.length)];
   //const avoidPeople = Math.random() > 0.5;
   console.log(deck, "deck");
-  const candidates = deck
+  const candidates = deck;
+  
 
   if (candidates.length > 0) {
     return candidates[Math.floor(Math.random() * candidates.length)];
   }
+  
   return deck[Math.floor(Math.random() * deck.length)];
 }
 
@@ -28,7 +31,7 @@ export function checkCorrect(played, item, index) {
   const correctIndex = sorted.findIndex((i) => {
     return i.id === item.id;
   });
-  console.log(index,correctIndex);
+  /*console.log(index,correctIndex);
   if(index===correctIndex){
     return{ correct: true, delta:0};
   }
@@ -37,8 +40,8 @@ export function checkCorrect(played, item, index) {
     if(item.answer===played[index].answer){
       return{ correct: true, delta:0};
     }
-  }
-  console.log("core",played[correctIndex-1]);
+  }*/
+  //console.log("core",played[correctIndex-1]);
   if (index !== correctIndex) {
     return { correct: false, delta: correctIndex - index };
   }

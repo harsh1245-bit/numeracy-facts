@@ -13,7 +13,7 @@ export default function Board(props) {
   const { highscore, resetGame, state, setState, updateHighscore } = props;
 
   const [isDragging, setIsDragging] = useState(false);
-
+  
   async function onDragStart() {
     setIsDragging(true);
     navigator.vibrate(20);

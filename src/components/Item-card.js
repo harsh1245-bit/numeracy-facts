@@ -37,7 +37,23 @@ export default function ItemCard(props) {
     transform: `perspective(600px) rotateY(${flipped ? 180 : 0}deg)`,
     config: { mass: 5, tension: 750, friction: 100 },
   });
-
+  const rounding = (number)=>{
+    if(number<10000){
+      return number;
+    }
+    else if(number<100000){
+      let x = number/1000;
+      return x.toFixed(1) + " K";
+    }
+    else if(number<100000000){
+      let x = number/100000;
+      return x.toFixed(1) + " M";
+    }
+    else if(number==='slide to answer')
+    {
+      return 'slide to answer';
+    }
+  }
   const type = React.useMemo(() => {
     
 
@@ -97,7 +113,7 @@ export default function ItemCard(props) {
               >
                 <span>
                   {"played" in item
-                    ? item.answer
+                    ? rounding(item.answer)
                     : item.suffix}
                 </span>
               </animated.div>
