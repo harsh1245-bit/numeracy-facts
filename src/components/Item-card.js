@@ -49,6 +49,10 @@ export default function ItemCard(props) {
       let x = number/100000;
       return x.toFixed(1) + " M";
     }
+    else if(number<100000000000){
+      let x = number/100000000;
+      return x.toFixed(1) + " B";
+    }
     else if(number==='slide to answer')
     {
       return 'slide to answer';
