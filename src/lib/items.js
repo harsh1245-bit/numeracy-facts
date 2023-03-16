@@ -33,7 +33,7 @@ export function getRandomItem(deck, played) {
     console.log("ye chala")
     return quest;
   }
-  const quest = deck[Math.floor(Math.random() * deck.length)];
+  //const quest = deck[Math.floor(Math.random() * deck.length)];
   console.log("ye wala chala");
   //updateQuestion("harsh");
   return Item;
