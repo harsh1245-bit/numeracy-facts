@@ -75,8 +75,10 @@ export default function Game() {
       if (items !== null) {
         setState(await createState(questions));
         setLoaded(true);
+        console.log("working")
       }
     };
+    
    createStateAsync();
   
     

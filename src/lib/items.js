@@ -6,27 +6,43 @@ export function getRandomItem(deck, played) {
   //const periods = [[-100000, 1000],[1000, 1800],[1800, 2020], ];
   //const [fromanswer, toanswer] =periods[Math.floor(Math.random() * periods.length)];
   //const avoidPeople = Math.random() > 0.5;
-  console.log(deck, "deck");
-  const candidates = deck;
+  const Item ={
+    created_at: null,
+    suffix: null,
+    id: 0,
+    country:"Game ended",
+    question: "No more questions",
+    year: "this filter, Please refresh",
+    code:"none",
+    url: null,
+    answer: "bye",
+  }
+  
+  console.log(deck,"deck");
+  const candidates = deck.filter((candidate) => {
+    if (tooClose(candidate, played)) {
+      return false;
+    }
+    return true;
+  });
+
   
 
   if (candidates.length > 0) {
     const quest = candidates[Math.floor(Math.random() * candidates.length)] 
-    
+    console.log("ye chala")
     return quest;
   }
   const quest = deck[Math.floor(Math.random() * deck.length)];
-
+  console.log("ye wala chala");
   //updateQuestion("harsh");
-  return quest;
+  return Item;
 }
 
-/*function tooClose(item, played) {
-  let distance = played.length < 40 ? 5 : 1;
-  if (played.length < 11) distance = 110 - 10 * played.length;
+function tooClose(item, played) {
 
-  return played.some((p) => Math.abs(item.answer - p.answer) < distance);
-}*/
+  return played.some((p) => item.id===p.id);
+}
 
 export function checkCorrect(played, item, index) {
   
